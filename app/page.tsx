@@ -267,29 +267,29 @@ export default function Home() {
         <div className="experience-grid" data-reveal>
           <div className="experience-title-block">
             <h3>AI Marketing Strategy Intern</h3>
-            <p className="experience-company">Tagline · Jun 2026 to Present</p>
+            <p className="experience-company">Tagline · June to July 2026</p>
           </div>
           <div className="experience-copy">
             <p>
-              Contributing to growth strategy for an AI-powered personal branding
+              Contributed to growth strategy for an AI-powered personal branding
               platform, using structured research to understand competitors,
               channels, users and market position.
             </p>
             <ul>
               <li>
-                Researching AI writing, personal branding and content workflow
+                Researched AI writing, personal branding and content workflow
                 products to identify differentiated positioning.
               </li>
               <li>
-                Analysing TikTok, Instagram Reels, YouTube Shorts, LinkedIn, Reddit
+                Analysed TikTok, Instagram Reels, YouTube Shorts, LinkedIn, Reddit
                 and Threads for organic growth opportunities.
               </li>
               <li>
-                Translating AI-assisted product features into clear messages for
+                Translated AI-assisted product features into clear messages for
                 students, professionals and startup teams.
               </li>
               <li>
-                Collaborating across strategy, campaign concepts, creative assets
+                Collaborated across strategy, campaign concepts, creative assets
                 and presentation deliverables.
               </li>
             </ul>
