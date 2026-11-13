@@ -33,7 +33,7 @@ test("server-renders the cybersecurity portfolio", async () => {
   assert.match(html, /Secure systems/i);
   assert.match(html, /Secure multi-campus enterprise network/i);
   assert.match(html, /Shalom-Rubaramira-Resume\.pdf/i);
-  assert.match(html, /aria-label="Toggle light and dark mode"/i);
+  assert.match(html, /aria-label="Light theme"[^>]*aria-pressed="false"/i);
   assert.match(html, /Sculpture colour palette/);
   assert.match(html, /aria-label="Play animations"/);
   assert.match(html, /Iris/);
@@ -79,7 +79,7 @@ test("keeps GitHub Pages export isolated from the Sites build", async () => {
   assert.match(layout, /shalom-portfolio-theme/);
   assert.match(layout, /canonicalUrl/);
   assert.match(page, /pagesBasePath.*Shalom-Rubaramira-Resume\.pdf/s);
-  assert.match(themeToggle, /Toggle light and dark mode/);
+  assert.match(themeToggle, /aria-label="Light theme"/);
   assert.match(styles, /data-theme="light"/);
   assert.match(packageJson, /"build:pages": "next build"/);
   assert.match(workflow, /actions\/deploy-pages@v4/);

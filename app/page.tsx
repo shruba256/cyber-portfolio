@@ -1,6 +1,7 @@
 import ThemeToggle from "./theme-toggle";
 import PortfolioMotion from "./portfolio-motion";
 import SignalField from "./signal-field";
+import Icon from "./icons";
 
 const networkTools = [
   "GNS3",
@@ -95,7 +96,7 @@ export default function Home() {
             <a href="#experience">Experience</a>
             <a href="#capabilities">Capabilities</a>
             <a className="nav-contact" href="#contact">
-              Contact <span aria-hidden="true">↗</span>
+              Contact <Icon name="arrow-down" />
             </a>
           </nav>
           <ThemeToggle />
@@ -105,12 +106,7 @@ export default function Home() {
       <main id="content" tabIndex={-1}>
         <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <div className="eyebrow">
-            <span className="status-dot" aria-hidden="true" />
-            MELBOURNE, AUSTRALIA · CLASS OF 2026
-          </div>
-
-          <p className="hero-greeting">Hello, I&apos;m Shalom <span aria-hidden="true">↗</span></p>
+          <p className="hero-greeting">Hello, I&apos;m Shalom</p>
 
           <h1 id="hero-title">
             Secure<br />systems.
@@ -124,39 +120,37 @@ export default function Home() {
             explainable outcomes.
           </p>
 
+          <p className="hero-location">Melbourne, Australia · Graduating December 2026</p>
+
           <div className="hero-actions">
             <a className="button button-primary" href="#work">
-              Explore selected work <span aria-hidden="true">↓</span>
+              View work <Icon name="arrow-down" />
             </a>
             <a
               className="button button-secondary"
               href={`${pagesBasePath}/Shalom-Rubaramira-Resume.pdf`}
               download
             >
-              Download résumé <span aria-hidden="true">↓</span>
+              Download résumé <Icon name="arrow-down" />
             </a>
           </div>
         </div>
 
         <SignalField />
 
-        <div className="hero-index" aria-hidden="true">
-          <span>SCROLL TO DISCOVER ↓</span>
+        <div className="hero-index">
+          <a href="#work">Scroll to discover <Icon name="arrow-down" /></a>
           <span>SECURITY IS A MINDSET. CURIOSITY IS THE START.</span>
         </div>
         </section>
 
       <div className="discipline-strip" aria-label="Areas of focus">
-        <span>Security by design</span><i aria-hidden="true">✳</i>
-        <span>Systems that connect</span><i aria-hidden="true">✳</i>
-        <span>Thinking that translates</span><i aria-hidden="true">✳</i>
+        <span>Security by design</span><Icon name="spark" />
+        <span>Systems that connect</span><Icon name="spark" />
+        <span>Thinking that translates</span><Icon name="spark" />
       </div>
 
       <section className="section profile-section" aria-labelledby="profile-title" data-reveal>
-        <div className="section-label">
-          <span>01</span>
-          <p>PROFILE</p>
-        </div>
         <div className="profile-content">
           <h2 id="profile-title">
             Technical depth,
@@ -179,25 +173,17 @@ export default function Home() {
       </section>
 
       <section className="section work-section" id="work" aria-labelledby="work-title">
-        <div className="section-heading-row">
-          <div className="section-label">
-            <span>02</span>
-            <p>SELECTED WORK</p>
-          </div>
-          <p className="section-note">PROJECTS / SIMULATIONS / 2025-2026</p>
-        </div>
         <h2 id="work-title" className="work-display" data-reveal>
-          A curious mind.<br /><span>A practical approach.</span>
+          Selected work<span className="heading-stop">.</span>
         </h2>
 
         <article className="feature-project" data-reveal data-spotlight>
-          <div className="project-number">01</div>
           <div className="project-main">
+            <h3>Secure multi-campus enterprise network</h3>
             <div className="project-kicker">
               <span>MONASH UNIVERSITY · 2026</span>
               <span>NETWORK SECURITY</span>
             </div>
-            <h3>Secure multi-campus enterprise network</h3>
             <div className="project-art" aria-label="Network illustration connecting three campuses through encrypted tunnels" role="img">
               <div className="topology-line topology-line-a" aria-hidden="true" />
               <div className="topology-line topology-line-b" aria-hidden="true" />
@@ -205,7 +191,7 @@ export default function Home() {
               <span className="topology-node topology-node-a">CAMPUS 01<small>SEGMENTED LAN</small></span>
               <span className="topology-node topology-node-b">CAMPUS 02<small>SEGMENTED LAN</small></span>
               <span className="topology-node topology-node-c">CAMPUS 03<small>SEGMENTED LAN</small></span>
-              <span className="topology-core">↗<small>IPsec / BGP</small></span>
+              <span className="topology-core">VPN<small>IPsec / BGP</small></span>
               <div className="project-art-caption"><span>CONNECTED. ENCRYPTED. VALIDATED.</span><span>01 / NETWORK ARCHITECTURE</span></div>
             </div>
             <p className="project-lead">
@@ -254,13 +240,12 @@ export default function Home() {
         </article>
 
         <article className="secondary-project" data-reveal data-spotlight>
-          <div className="project-number">02</div>
           <div>
+            <h3>Security awareness analyst simulation</h3>
             <div className="project-kicker">
               <span>MASTERCARD · FORAGE · 2025</span>
               <span>SECURITY AWARENESS</span>
             </div>
-            <h3>Security awareness analyst simulation</h3>
           </div>
           <p>
             Assessed phishing vulnerabilities and control effectiveness, analysed
@@ -275,20 +260,12 @@ export default function Home() {
         id="experience"
         aria-labelledby="experience-title"
       >
-        <div className="section-heading-row">
-          <div className="section-label">
-            <span>03</span>
-            <p>EXPERIENCE</p>
-          </div>
-          <p className="section-note">FIELD LOG</p>
-        </div>
-        <h2 id="experience-title" className="visually-hidden">
+        <h2 id="experience-title" className="section-title">
           Professional experience
         </h2>
 
         <div className="experience-grid" data-reveal>
           <div className="experience-title-block">
-            <p className="mono-line">CURRENT ROLE</p>
             <h3>AI Marketing Strategy Intern</h3>
             <p className="experience-company">Tagline · Jun 2026 to Present</p>
           </div>
@@ -336,13 +313,6 @@ export default function Home() {
         id="capabilities"
         aria-labelledby="capabilities-title"
       >
-        <div className="section-heading-row">
-          <div className="section-label">
-            <span>04</span>
-            <p>CAPABILITIES</p>
-          </div>
-          <p className="section-note">TOOLS + METHODS</p>
-        </div>
 
         <div className="capability-intro">
           <h2 id="capabilities-title">A toolkit built across systems and people.</h2>
@@ -355,7 +325,6 @@ export default function Home() {
         <div className="capability-grid">
           {capabilityGroups.map((group) => (
             <article key={group.code} className="capability-card" data-reveal data-spotlight>
-              <div className="capability-code">{group.code}</div>
               <h3>{group.title}</h3>
               <ul>
                 {group.items.map((item) => (
@@ -368,16 +337,9 @@ export default function Home() {
       </section>
 
       <section className="section education-section" aria-labelledby="education-title">
-        <div className="section-heading-row">
-          <div className="section-label">
-            <span>05</span>
-            <p>EDUCATION</p>
-          </div>
-          <p className="section-note">LEARNING RECORD</p>
-        </div>
 
-        <h2 id="education-title" className="visually-hidden">
-          Education, credentials and achievements
+        <h2 id="education-title" className="section-title">
+          Education &amp; credentials
         </h2>
 
         <div className="education-list">
@@ -426,10 +388,6 @@ export default function Home() {
           <i />
         </div>
         <div className="contact-content" data-reveal>
-          <div className="eyebrow">
-            <span className="status-dot" aria-hidden="true" />
-            OPEN TO GRADUATE CYBERSECURITY OPPORTUNITIES
-          </div>
           <h2>
             Let&apos;s talk
             <br />
@@ -443,17 +401,17 @@ export default function Home() {
           <div className="contact-links">
             <a href="mailto:shalommuhoozi@gmail.com">
               <small>EMAIL</small>
-              <span>shalommuhoozi@gmail.com ↗</span>
+              <span>shalommuhoozi@gmail.com <Icon name="arrow-up-right" /></span>
             </a>
             <a href="tel:+61404541339">
               <small>PHONE</small>
-              <span>0404 541 339 ↗</span>
+              <span>0404 541 339 <Icon name="arrow-up-right" /></span>
             </a>
           </div>
         </div>
         <div className="footer-meta">
           <span>© 2026 SHALOM RUBARAMIRA</span>
-          <a href="#top">BACK TO TOP ↑</a>
+          <a href="#top">Back to top <Icon name="arrow-up" /></a>
         </div>
       </footer>
     </PortfolioMotion>

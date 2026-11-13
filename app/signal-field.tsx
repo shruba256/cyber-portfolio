@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePortfolioMotion } from "./portfolio-motion";
+import Icon from "./icons";
 
 const palettes = [
   { name: "Iris", colors: [[0.38, 0.22, 0.95], [0.98, 0.63, 0.43], [0.72, 0.72, 1.0]] },
@@ -201,8 +202,8 @@ export default function SignalField() {
   }, []);
 
   return (
-    <div className="signal-field" data-palette={palettes[palette].name.toLowerCase()}>
-      <div className="signal-heading"><span>PLAY / EXPLORE</span><span className="signal-star" aria-hidden="true">✳</span></div>
+    <div className="signal-field" data-palette={palettes[palette].name.toLowerCase()} aria-label="Interactive colour sculpture">
+      <div className="signal-heading"><span>Interactive sculpture</span><Icon name="spark" className="signal-star" /></div>
       <div ref={stageRef} className="signal-stage" data-palette={palette} data-playing={motion}>
         <div className={`signal-fallback${webgl ? " is-rendered" : ""}`} aria-hidden="true" />
         <canvas ref={canvasRef} className="signal-canvas" aria-hidden="true" />
@@ -219,10 +220,10 @@ export default function SignalField() {
           ))}
         </div>
         <button type="button" className="motion-toggle" aria-pressed={motion} onClick={toggleMotion} aria-label={motion ? "Pause animations" : "Play animations"}>
-          <span aria-hidden="true">{motion ? "Ⅱ" : "▷"}</span><span>{motion ? "Pause" : "Play"}</span>
+          <Icon name={motion ? "pause" : "play"} /><span>{motion ? "Pause" : "Play"}</span>
         </button>
       </div>
-      <p className="signal-caption">A little curiosity goes a long way. <span>Move your cursor.</span></p>
+      <p className="signal-caption">Choose a palette. Play or pause the page&apos;s motion.<span> Move your cursor to explore the form.</span></p>
     </div>
   );
 }

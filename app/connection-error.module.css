@@ -17,11 +17,11 @@
 .contact span { color: var(--accent); font-size: 20px; }
 .main { flex: 1; display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: 12px; padding: 32px 4.8vw 40px; min-height: 510px; }
 .copy { position: relative; z-index: 1; }
-.eyebrow { display: flex; align-items: center; gap: 13px; color: var(--muted); font: 9px/1.5 var(--mono); letter-spacing: .10em; margin: 0 0 34px; }
-.eyebrow > span { padding: 7px 11px; border: 1px solid var(--line-strong); border-radius: 5px; color: var(--accent); font-size: 12px; letter-spacing: .02em; }
-.title { font-size: clamp(64px, 7.6vw, 122px); font-weight: 400; line-height: .98; letter-spacing: -.07em; margin: 0; }
-.title em { display: inline-block; margin-top: 8px; padding-right: 12px; color: var(--accent); font-family: Georgia, serif; font-weight: 400; letter-spacing: -.07em; }
-.message { max-width: 360px; margin: 30px 0 0; color: var(--copy); font-size: 14px; line-height: 1.8; }
+.errorCode { display: flex; align-items: center; gap: 13px; color: var(--muted); font: 9px/1.5 var(--mono); letter-spacing: .10em; margin: 24px 0 0; }
+.errorCode > span { padding: 7px 11px; border: 1px solid var(--line-strong); border-radius: 5px; color: var(--accent); font-size: 12px; letter-spacing: .02em; }
+.title { font-size: clamp(64px, 7.6vw, 96px); font-weight: 400; line-height: .98; letter-spacing: -.035em; margin: 0; }
+.title em { display: inline-block; margin-top: 8px; padding-right: 12px; color: var(--accent); font-family: Georgia, serif; font-weight: 400; letter-spacing: -.035em; }
+.message { max-width: 46ch; margin: 30px 0 0; color: var(--copy); font-size: 16px; line-height: 1.8; }
 .links { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 32px; }
 .reconnect { display: inline-flex; align-items: center; gap: 11px; min-height: 52px; padding: 0 20px; border-radius: 30px; color: var(--accent-contrast); background: var(--accent); font-size: 12px; transition: transform .2s, box-shadow .2s; }
 .reconnect:hover, .reconnect:focus-visible { transform: translateY(-3px); box-shadow: 0 7px 25px color-mix(in srgb, var(--accent) 20%, transparent); }
@@ -71,9 +71,9 @@
 .network[data-connecting="true"] .returnSignal { animation: route-home .85s .2s ease-in-out both; }
 .network[data-connecting="true"] .arrivalRing { animation: route-arrival .45s .85s ease-out both; }
 .network[data-connecting="true"] .homeNode .nodeIcon { stroke: var(--route-restored); }
-.footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 4.8vw; gap: 22px; color: var(--muted); font: 7px/1.5 var(--mono); letter-spacing: .06em; }
+.footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 4.8vw; gap: 22px; color: var(--muted); font: 11px/1.5 var(--sans); letter-spacing: .06em; }
 .footer i { color: var(--accent); font-style: normal; margin: 0 10px; }
-.footer button { background: none; border: 0; color: var(--copy); font: 9px/1.5 var(--mono); min-height: 44px; padding: 0 4px; }
+.footer button { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; color: var(--copy); font: 9px/1.5 var(--mono); min-height: 44px; padding: 0 4px; }
 .footer button:hover { color: var(--accent); }
 :global([data-motion="off"]) .packet, :global([data-motion="off"]) .packetGlow { animation: none; opacity: 0; }
 @keyframes route-request { 0% { offset-distance: 0%; opacity: 0; } 12% { opacity: 1; } 75% { offset-distance: 100%; opacity: 1; } 85%, 100% { offset-distance: 100%; opacity: 0; } }
@@ -84,7 +84,7 @@
   .main { grid-template-columns: 1fr; padding: 46px 6vw 30px; gap: 35px; }
   .copy { max-width: 550px; }
   .title { font-size: clamp(62px, 12vw, 100px); }
-  .eyebrow { margin-bottom: 25px; }
+  .errorCode { margin-bottom: 0; }
   .message { max-width: 400px; margin-top: 23px; }
   .network { width: min(100%, 580px); justify-self: center; }
   .diagram { margin: -15px 0 -30px; }
@@ -94,25 +94,25 @@
   .header :global(.brand-mark) { font-size: 37px; }
   .header :global(.brand-copy) { gap: 6px; }
   .header :global(.brand-copy strong) { font-size: 11px; }
-  .header :global(.brand-copy small) { font-size: 6px; }
+  .header :global(.brand-copy small) { font-size: 10px; }
   .headerActions { gap: 0; }
   .contact { display: none; }
   .header :global(.theme-toggle) { min-width: 62px; }
   .main { padding-top: 34px; gap: 40px; }
   .title { font-size: clamp(54px, 16vw, 78px); }
-  .message { font-size: 13px; max-width: 330px; }
+  .message { font-size: 15px; max-width: 330px; }
   .links { gap: 14px 20px; margin-top: 24px; }
   .reconnect { min-height: 48px; padding-inline: 16px; font-size: 11px; gap: 9px; }
   .reconnect > span { margin-left: 5px; }
   .workLink { font-size: 10px; gap: 10px; }
-  .status { font-size: 8px; }
-  .diagramHeader, .diagramCaption { font-size: 6px; letter-spacing: .03em; }
+  .status { font-size: 11px; }
+  .diagramHeader, .diagramCaption { font-size: 10px; letter-spacing: .03em; }
   .diagramHeader { padding-bottom: 12px; }
   .diagramCaption { padding-top: 12px; }
-  .footer { padding-inline: 6vw; font-size: 6px; gap: 12px; }
+  .footer { padding-inline: 6vw; font-size: 10px; gap: 12px; }
   .footer > span { max-width: 190px; line-height: 1.8; }
   .footer i { margin: 0 3px; }
-  .footer button { flex-shrink: 0; font-size: 8px; }
+  .footer button { flex-shrink: 0; font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .reconnect { transition: none; }

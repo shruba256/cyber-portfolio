@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Icon from "./icons";
 
 type Theme = "dark" | "light";
 
@@ -12,11 +13,16 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme>("dark");
+
   useEffect(() => {
+    const syncTheme = () => setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+    syncTheme();
     const handleStorage = (event: StorageEvent) => {
       if (event.key !== storageKey) return;
       const nextTheme = event.newValue === "light" ? "light" : "dark";
       applyTheme(nextTheme);
+      setTheme(nextTheme);
     };
 
     window.addEventListener("storage", handleStorage);
@@ -29,6 +35,7 @@ export default function ThemeToggle() {
     const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
 
     applyTheme(nextTheme);
+    setTheme(nextTheme);
     try {
       window.localStorage.setItem(storageKey, nextTheme);
     } catch {
@@ -40,14 +47,16 @@ export default function ThemeToggle() {
     <button
       type="button"
       className="theme-toggle"
-      aria-label="Toggle light and dark mode"
+      aria-label="Light theme"
+      aria-pressed={theme === "light"}
+      title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
       onClick={toggleTheme}
     >
       <span className="theme-icon theme-icon-light" aria-hidden="true">
-        ☀
+        <Icon name="sun" />
       </span>
       <span className="theme-icon theme-icon-dark" aria-hidden="true">
-        ◐
+        <Icon name="moon" />
       </span>
       <span className="theme-label theme-label-light">Light</span>
       <span className="theme-label theme-label-dark">Dark</span>

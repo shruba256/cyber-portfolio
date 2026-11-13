@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type MouseEvent } from "react";
 import ThemeToggle from "./theme-toggle";
 import PortfolioMotion, { usePortfolioMotion } from "./portfolio-motion";
 import styles from "./connection-error.module.css";
+import Icon from "./icons";
 
 const outgoingPath = "M146 260 L245 203 L301 235";
 const incomingPath = "M357 267 L425 306 L531 245";
@@ -101,24 +102,24 @@ function ErrorScene({ homeHref }: { homeHref: string }) {
       <a className="skip-link" href="#lost-content">Skip to content</a>
       <header className={styles.header}>
         <a className="brand" href={homeHref} aria-label="Shalom Rubaramira, home">
-          <span className="brand-mark">S.</span>
+          <span className="brand-mark">s.</span>
           <span className="brand-copy"><strong>Shalom Rubaramira</strong><small>CYBERSECURITY &amp; RISK ANALYSIS</small></span>
         </a>
         <div className={styles.headerActions}>
-          <a className={styles.contact} href={`${homeHref}#contact`}>Let&apos;s talk <span aria-hidden="true">↗</span></a><ThemeToggle />
+          <a className={styles.contact} href={`${homeHref}#contact`}>Let&apos;s talk <Icon name="arrow-up-right" /></a><ThemeToggle />
         </div>
       </header>
       <main className={styles.main} id="lost-content" tabIndex={-1}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}><span>404</span> PAGE NOT FOUND</p>
           <h1 className={styles.title}>Lost<br /><em>connection.</em></h1>
+          <p className={styles.errorCode}><span>404</span> PAGE NOT FOUND</p>
           <p className={styles.message}>The page you&apos;re looking for has moved or doesn&apos;t exist. Let&apos;s get you back to a known route.</p>
           <nav className={styles.links} aria-label="Find your way back" aria-busy={connecting}>
             <a className={styles.reconnect} href={homeHref} onClick={reconnect} aria-disabled={connecting || undefined}>
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8 8-2-2m10 10 2 2M7 4l-3 3 5 5 3-3Zm10 16 3-3-5-5-3 3ZM10 14l4-4" /></svg>
-              {connecting ? "Reconnecting..." : "Reconnect"}<span aria-hidden="true">↗</span>
+              {connecting ? "Reconnecting..." : "Reconnect"}<Icon name="arrow-up-right" />
             </a>
-            <a className={styles.workLink} href={`${homeHref}#work`}>Explore my work <span aria-hidden="true">↗</span></a>
+            <a className={styles.workLink} href={`${homeHref}#work`}>Explore my work <Icon name="arrow-up-right" /></a>
           </nav>
           <p className={styles.status} role="status" aria-live="polite">{connecting ? "Route restored. Taking you home." : "Reconnect to return to my portfolio."}</p>
         </div>
@@ -126,7 +127,7 @@ function ErrorScene({ homeHref }: { homeHref: string }) {
       </main>
       <footer className={styles.footer}>
         <span>SHALOM RUBARAMIRA <i>/</i> CYBERSECURITY &amp; RISK ANALYSIS</span>
-        <button type="button" onClick={toggleMotion} aria-pressed={motion} aria-label={motion ? "Pause effects" : "Play effects"}>{motion ? "Ⅱ Pause effects" : "▷ Play effects"}</button>
+        <button type="button" onClick={toggleMotion} aria-pressed={motion} aria-label={motion ? "Pause effects" : "Play effects"}><Icon name={motion ? "pause" : "play"} />{motion ? "Pause effects" : "Play effects"}</button>
       </footer>
     </div>
   );
