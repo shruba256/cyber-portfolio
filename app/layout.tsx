@@ -24,14 +24,19 @@ const isCloudflarePages = Boolean(
   process.env.CF_PAGES || process.env.CLOUDFLARE_PAGES,
 );
 const isCloudflareWorkers = Boolean(process.env.CLOUDFLARE_WORKERS);
+const vercelHost =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+const vercelSiteUrl =
+  process.env.VERCEL && vercelHost ? `https://${vercelHost}` : null;
 const siteUrl = pagesBasePath
   ? githubPagesUrl
-  : isCloudflareWorkers
+  : vercelSiteUrl ?? (isCloudflareWorkers
     ? "https://portfolio.shalommuhoozi-cyber.workers.dev"
     : isCloudflarePages
       ? "https://shalom-cyber-portfolio.pages.dev"
-      : "https://shalom-rubaramira-cyber.shalommuhoozi.chatgpt.site";
-const canonicalUrl = `${githubPagesUrl}/`;
+      : "https://shalom-rubaramira-cyber.shalommuhoozi.chatgpt.site");
+const canonicalUrl =
+  !pagesBasePath && vercelSiteUrl ? `${vercelSiteUrl}/` : `${githubPagesUrl}/`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

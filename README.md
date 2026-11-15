@@ -39,6 +39,20 @@ The page content and contact links remain usable without JavaScript.
 - Tailwind CSS
 - vinext for the Cloudflare-compatible Sites deployment
 - Next.js static export for GitHub Pages
+- Native Next.js hosting on Vercel
+
+## Vercel hosting
+
+The linked project is `ruba23/shalom-cyber-portfolio`. `vercel.json` selects
+Next.js and runs `npm run build:pages`, keeping the Cloudflare-oriented default
+build script available for Sites. Vercel supplies its production hostname for
+canonical URLs, the favicon and social preview assets. GitHub Pages retains its
+own export base path and canonical URL.
+
+```bash
+vercel link --scope ruba23 --project shalom-cyber-portfolio
+vercel deploy --prod --scope ruba23
+```
 
 ## Local development
 
