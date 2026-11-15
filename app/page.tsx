@@ -83,7 +83,7 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Shalom Rubaramira, home">
-          <span className="brand-mark">s.</span>
+          <span className="brand-mark">S.</span>
           <span className="brand-copy">
             <strong>Shalom Rubaramira</strong>
             <small>CYBERSECURITY & RISK ANALYSIS</small>

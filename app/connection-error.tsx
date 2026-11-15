@@ -102,7 +102,7 @@ function ErrorScene({ homeHref }: { homeHref: string }) {
       <a className="skip-link" href="#lost-content">Skip to content</a>
       <header className={styles.header}>
         <a className="brand" href={homeHref} aria-label="Shalom Rubaramira, home">
-          <span className="brand-mark">s.</span>
+          <span className="brand-mark">S.</span>
           <span className="brand-copy"><strong>Shalom Rubaramira</strong><small>CYBERSECURITY &amp; RISK ANALYSIS</small></span>
         </a>
         <div className={styles.headerActions}>
