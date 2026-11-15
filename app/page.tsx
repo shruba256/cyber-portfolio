@@ -128,7 +128,7 @@ export default function Home() {
             </a>
             <a
               className="button button-secondary"
-              href={`${pagesBasePath}/Shalom-Rubaramira-Resume.pdf`}
+              href={`${pagesBasePath}/Shalom-Rubaramira-Resume.pdf?v=2026-11-15`}
               download
             >
               Download résumé <Icon name="arrow-down" />
@@ -402,10 +402,6 @@ export default function Home() {
             <a href="mailto:shalommuhoozi@gmail.com">
               <small>EMAIL</small>
               <span>shalommuhoozi@gmail.com <Icon name="arrow-up-right" /></span>
-            </a>
-            <a href="tel:+61404541339">
-              <small>PHONE</small>
-              <span>0404 541 339 <Icon name="arrow-up-right" /></span>
             </a>
           </div>
         </div>
