@@ -65,7 +65,19 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/og.png`],
   },
   icons: {
-    icon: [{ url: `${siteUrl}/favicon.svg`, type: "image/svg+xml" }],
+    icon: [
+      {
+        url: `${siteUrl}/favicon.ico?v=s-mark-20261115`,
+        sizes: "16x16 32x32 48x48",
+        type: "image/x-icon",
+      },
+      {
+        url: `${siteUrl}/favicon.svg?v=s-mark-20261115`,
+        sizes: "any",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [{ url: `${siteUrl}/apple-touch-icon.png?v=s-mark-20261115`, sizes: "180x180" }],
   },
   authors: [{ name: "Shalom Rubaramira" }],
   creator: "Shalom Rubaramira",
