@@ -54,6 +54,26 @@ vercel link --scope ruba23 --project shalom-cyber-portfolio
 vercel deploy --prod --scope ruba23
 ```
 
+### Analytics and performance
+
+The Vercel production deployment includes `@vercel/analytics` and
+`@vercel/speed-insights`. Collection runs only when `VERCEL=1` and
+`VERCEL_ENV=production`, so local development, previews, GitHub Pages and Sites
+do not request Vercel collection endpoints.
+
+The RUBA workspace is on Hobby. As verified on 15 November 2026, its included
+allowances are 50,000 Web Analytics events per month and 10,000 free Speed
+Insights events per rolling 30 days, shared across the team. Web Analytics has
+a one-month reporting window. Free Speed Insights provides the Real Experience
+Score and limited route breakdowns. Collection pauses at the applicable cap.
+Custom analytics events, UTM reporting, Plus features and paid monitoring
+add-ons are not configured. Basic runtime logs and the Usage dashboard are
+available through Vercel.
+
+See [Web Analytics pricing](https://vercel.com/docs/analytics/limits-and-pricing)
+and [Speed Insights pricing](https://vercel.com/docs/speed-insights/limits-and-pricing)
+for current limits. Upgrading the account can change product pricing.
+
 ## Local development
 
 Requires Node.js 22 or newer.

@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const themeScript = `(() => {
@@ -37,6 +39,8 @@ const siteUrl = pagesBasePath
       : "https://shalom-rubaramira-cyber.shalommuhoozi.chatgpt.site");
 const canonicalUrl =
   !pagesBasePath && vercelSiteUrl ? `${vercelSiteUrl}/` : `${githubPagesUrl}/`;
+const enableVercelInsights =
+  process.env.VERCEL === "1" && process.env.VERCEL_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -85,7 +89,15 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {enableVercelInsights && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
+      </body>
     </html>
   );
 }
